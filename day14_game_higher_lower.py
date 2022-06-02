@@ -1,5 +1,6 @@
 
 ## write this in vs code cloud on github
+## write this in my local machine
 import art
 ## Print logo game
 print(art.logo_higher_lower)
