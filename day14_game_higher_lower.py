@@ -56,50 +56,10 @@ while is_correct:
     else:
         print(f"You lose! Final score {score}")
     
-
-    # if (answer == "A") and (followerA > followerB):
-    #     print("You win")
-    #     score
-    # elif (answer == "B") and (followerA < followerB):
-    #     print("You win")
-    # else:
-    #     print("You lose")    
-    #     still_win = False
-    
     print(f"A has {get_followers(diceA)}")
     print(f"B has {get_followers(diceB)}")
    
-   
     diceA = diceB
     diceB = random.choice(data)
-        
-   
+
     print('--------------------------------')
-
-
-## Choose a random number
-
-
-## Ask the user who has higher number Instagram follow  
-
-
-######## Angela algorithm
-# Generate a random account from the game data.
-
-# Format account data into printable format.
-
-# Ask user for a guess.
-
-# Check if user is correct.
-## Get follower count.
-## If Statement
-
-# Feedback.
-
-# Score Keeping.
-
-# Make game repeatable.
-
-# Make B become the next A.
-
-# Add art.
