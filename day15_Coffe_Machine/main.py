@@ -43,21 +43,6 @@ def generate_report():
     coffe_amount = resources["coffee"]
     print(f"Water: {water_amount} \nMilk: {milk_amount} \nCoffe: {coffe_amount}")
 
-
-# Ask user what he/she like
-user_answer = "report"  # input("What would you like? :").lower()
-# print(user_answer)
-
-# Report
-if user_answer == 'report':
-    generate_report()
-
-
-# TODO: 2. Turn off the coffe machine
-# Seguir o caminho
-# TODO: 4. Check resources if it is sufficient
-
-
 def check_is_sufficient(order):
     print(f'--------{order}-----------')
 
@@ -69,15 +54,32 @@ def check_is_sufficient(order):
 
     print(resources_ammount["water"])
     print(order_ingredients["ingredients"]["water"])
-    #print(order_ingredients["ingredients"]["latte"])
+    # print(order_ingredients["ingredients"]["latte"])
     print("\n")
 
-check_is_sufficient('espresso')
-check_is_sufficient('latte')
-check_is_sufficient('cappuccino')
 
-# TODO: 5. Process Coins
+machine_is_on = True
 
-# TODO: 6. Check if the trasaction was sucefful
+while machine_is_on:
+    # Ask user what he/she like
+    user_choice = input("What would you like? :").lower()
+    if user_choice == "off":
+        machine_is_on = False
+    else:
+        # machine is ON
+        if user_choice == 'report':
+            generate_report()
 
-# TODO: 7. Make Coffe
+        # TODO: 2. Turn off the coffe machine
+        # Seguir o caminho
+        # TODO: 4. Check resources if it is sufficient
+
+        check_is_sufficient('espresso')
+        check_is_sufficient('latte')
+        check_is_sufficient('cappuccino')
+
+        # TODO: 5. Process Coins
+
+        # TODO: 6. Check if the trasaction was sucefful
+
+        # TODO: 7. Make Coffe
