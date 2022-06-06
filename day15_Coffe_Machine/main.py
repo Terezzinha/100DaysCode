@@ -38,10 +38,7 @@ resources = {
 
 def generate_report():
     """Shows the amount of ingredients"""
-    water_amount = resources["water"]
-    milk_amount = resources["milk"]
-    coffe_amount = resources["coffee"]
-    print(f"Water: {water_amount} \nMilk: {milk_amount} \nCoffe: {coffe_amount}")
+    print(f"Water: {resources['water']} \nMilk: {resources['milk']} \nCoffe: {resources['coffee']} \nProfit: R$ {machine_profit}")
 
 def check_is_sufficient(order):
     print(f'--------{order}-----------')
@@ -59,21 +56,22 @@ def check_is_sufficient(order):
 
 
 machine_is_on = True
+machine_profit = 0
 
 while machine_is_on:
     # Ask user what he/she like
-    user_choice = input("What would you like? :").lower()
+    user_choice = input("What would you like?: ").lower()
     if user_choice == "off":
         machine_is_on = False
-    else:
-        # machine is ON
-        if user_choice == 'report':
-            generate_report()
+
+    # machine is ON
+    elif user_choice == 'report':
+        generate_report()
 
         # TODO: 2. Turn off the coffe machine
         # Seguir o caminho
         # TODO: 4. Check resources if it is sufficient
-
+    else:
         check_is_sufficient('espresso')
         check_is_sufficient('latte')
         check_is_sufficient('cappuccino')
