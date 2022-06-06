@@ -42,11 +42,25 @@ def generate_report():
 
 
 def check_is_sufficient(order_ingredients):
-    """Check if there are sufficient supplies to make the order"""
+    """Check if there are sufficient supplies to make the order
+    Return True ou False
+    """
     for item in order_ingredients:
         if order_ingredients[item] >= resources[item]:
             print(f"Sorry, the is not enough {item}")
+            return False
+    return True
 
+
+def process_coins()
+    """"Process if the cois is sufficient to check out
+    Quarter = $0.25 - Dimes = $0.10 - Nickles = $0.05 - Pennies = $0.01 
+    """
+    print("Please, insert do coins: ")
+    quarters = int(input("How many quarters: "))
+    dimes = int(input("How many dimes: "))
+    nic = int(input("How many quarters: "))
+    quarters = int(input("How many quarters: "))
 
 machine_is_on = True
 machine_profit = 0
@@ -61,16 +75,10 @@ while machine_is_on:
     elif user_choice == 'report':
         generate_report()
 
-        # TODO: 2. Turn off the coffe machine
-        # Seguir o caminho
-        # TODO: 4. Check resources if it is sufficient
     else:
         drink_order = MENU[user_choice]
         print(f"drink_order: {drink_order}")
-        check_is_sufficient(drink_order['ingredients'])
-
-        # TODO: 5. Process Coins
-
-        # TODO: 6. Check if the trasaction was sucefful
-
-        # TODO: 7. Make Coffe
+        if check_is_sufficient(drink_order['ingredients']):
+            # TODO: 5. Process Coins
+            # TODO: 6. Check if the trasaction was sucefful
+            # TODO: 7. Make Coffe
