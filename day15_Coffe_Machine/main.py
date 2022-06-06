@@ -40,19 +40,12 @@ def generate_report():
     """Shows the amount of ingredients"""
     print(f"Water: {resources['water']} \nMilk: {resources['milk']} \nCoffe: {resources['coffee']} \nProfit: R$ {machine_profit}")
 
-def check_is_sufficient(order):
-    print(f'--------{order}-----------')
 
-    resources_ammount = resources
-    print(f"resources: {resources_ammount} ")
-
-    order_ingredients = MENU[order]
-    print(f"Ingredient for {order}: {order_ingredients}")
-
-    print(resources_ammount["water"])
-    print(order_ingredients["ingredients"]["water"])
-    # print(order_ingredients["ingredients"]["latte"])
-    print("\n")
+def check_is_sufficient(order_ingredients):
+    """Check if there are sufficient supplies to make the order"""
+    for item in order_ingredients:
+        if order_ingredients[item] >= resources[item]:
+            print(f"Sorry, the is not enough {item}")
 
 
 machine_is_on = True
@@ -60,7 +53,7 @@ machine_profit = 0
 
 while machine_is_on:
     # Ask user what he/she like
-    user_choice = input("What would you like?: ").lower()
+    user_choice = input("What would you like? (e/l/c): ").lower()
     if user_choice == "off":
         machine_is_on = False
 
@@ -72,9 +65,9 @@ while machine_is_on:
         # Seguir o caminho
         # TODO: 4. Check resources if it is sufficient
     else:
-        check_is_sufficient('espresso')
-        check_is_sufficient('latte')
-        check_is_sufficient('cappuccino')
+        drink_order = MENU[user_choice]
+        print(f"drink_order: {drink_order}")
+        check_is_sufficient(drink_order['ingredients'])
 
         # TODO: 5. Process Coins
 
