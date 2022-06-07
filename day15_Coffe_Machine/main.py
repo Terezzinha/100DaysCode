@@ -52,15 +52,28 @@ def check_is_sufficient(order_ingredients):
     return True
 
 
-def process_coins()
-    """"Process if the cois is sufficient to check out
+def process_coins():
+    """"Return the total calculated from coins inserted
     Quarter = $0.25 - Dimes = $0.10 - Nickles = $0.05 - Pennies = $0.01 
     """
     print("Please, insert do coins: ")
     quarters = int(input("How many quarters: "))
     dimes = int(input("How many dimes: "))
-    nic = int(input("How many quarters: "))
-    quarters = int(input("How many quarters: "))
+    nickles = int(input("How many nickles: "))
+    pennies = int(input("How many pennies: "))
+
+    total = 0
+    if quarters > 0:
+        total += quarters * 0.25
+    if dimes > 0:
+        total += dimes * 0.10
+    if nickles > 0:
+        total += nickles * 0.05
+    if pennies > 0:
+        total += pennies * 0.05
+
+    return total
+
 
 machine_is_on = True
 machine_profit = 0
@@ -79,6 +92,8 @@ while machine_is_on:
         drink_order = MENU[user_choice]
         print(f"drink_order: {drink_order}")
         if check_is_sufficient(drink_order['ingredients']):
+            print(f"Total: $ {process_coins()}")
+            
             # TODO: 5. Process Coins
             # TODO: 6. Check if the trasaction was sucefful
             # TODO: 7. Make Coffe
