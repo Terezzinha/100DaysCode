@@ -92,8 +92,15 @@ while machine_is_on:
         drink_order = MENU[user_choice]
         print(f"drink_order: {drink_order}")
         if check_is_sufficient(drink_order['ingredients']):
-            print(f"Total: $ {process_coins()}")
-            
-            # TODO: 5. Process Coins
+            payment = process_coins()
+            drink_price = drink_order['cost']
+            print(f"User Payment: $ {payment}")
+            print(f"Drink Price {drink_price}")
+            if payment >= drink_price:
+                machine_profit += payment
+                if payment > drink_price:
+                    print(f"Your change is {payment - drink_price}")
+            else:
+                print(f"The money is not enough. You need more {drink_price - payment}!")
             # TODO: 6. Check if the trasaction was sucefful
             # TODO: 7. Make Coffe
