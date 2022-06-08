@@ -10,3 +10,7 @@ timmy.forward(50)
 my_screen = Screen()
 
 my_screen.exitonclick()
+
+import prettytable
+
+
