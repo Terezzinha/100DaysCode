@@ -35,10 +35,14 @@ resources = {
     "coffee": 100,
 }
 
+machine_is_on = True
+machine_profit = 0
+
 
 def generate_report():
     """Shows the amount of ingredients"""
-    print(f"Water: {resources['water']} \nMilk: {resources['milk']} \nCoffe: {resources['coffee']} \nProfit: R$ {machine_profit}")
+    print(f"Water: {resources['water']} \nMilk: {resources['milk']} "
+          f"\nCoffee: {resources['coffee']} \nProfit: R$ {machine_profit}")
 
 
 def check_is_sufficient(order_ingredients):
@@ -75,8 +79,28 @@ def process_coins():
     return total
 
 
-machine_is_on = True
-machine_profit = 0
+def is_transaction_successful(money_received, drink_cost):
+    """Return True when the payment is accepted or False se money is insufficient"""
+    if money_received >= drink_cost:
+        global machine_profit
+        machine_profit += drink_cost
+        change = round(money_received - drink_cost, 2)
+        if change > 0:
+            print(f"Your change is {change} 💸 ")
+        return True
+    else:
+        print(f"The money is not enough. You need more {drink_cost - money_received}!")
+        return False
+
+
+def make_coffee(drink_name, order_ingredients):
+    """Deduct the required ingredients from the resources"""
+    for item in order_ingredients:
+        resources[item] -= order_ingredients[item]
+    print(f"Here you {drink_name}  ☕")
+
+#######################
+
 
 while machine_is_on:
     # Ask user what he/she like
@@ -96,11 +120,5 @@ while machine_is_on:
             drink_price = drink_order['cost']
             print(f"User Payment: $ {payment}")
             print(f"Drink Price {drink_price}")
-            if payment >= drink_price:
-                machine_profit += payment
-                if payment > drink_price:
-                    print(f"Your change is {payment - drink_price}")
-            else:
-                print(f"The money is not enough. You need more {drink_price - payment}!")
-            # TODO: 6. Check if the trasaction was sucefful
-            # TODO: 7. Make Coffe
+            if is_transaction_successful(payment, drink_price):
+                make_coffee(user_choice, drink_order['ingredients'])
