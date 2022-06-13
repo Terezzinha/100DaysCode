@@ -23,7 +23,7 @@ class QuizBrain:
             print("That´s wrong")
         print(f"The correct answer was: {correct_answer}")
         print(f"Your scores is {self.score}/{self.question_number}")
-        print(\n)
+        print('------------------------')
 
 
 # todo: checking if the answers was correct
