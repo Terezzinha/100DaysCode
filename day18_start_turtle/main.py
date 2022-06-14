@@ -1,9 +1,12 @@
-from turtle import Turtle, Screen
+#from turtle import Turtle, Screen
 import random
+import turtle as t
 
 colors = ['gainsboro','lime green','hot pink', 'indigo', 'orange', 'wheat', 'blue' , 'red', 'black']
 directions = [0,90,180,270]
 step_size = [30, 35, 45]
+
+t.colormode(155)
 
 
 def draw_line():
@@ -18,6 +21,7 @@ def draw_polygon(num_sides):
         timmy_the_turtle.right(angle)
         timmy_the_turtle.forward(100)
 
+
 def randon_walk():
     timmy_the_turtle.speed('fastest')
     timmy_the_turtle.pensize(15)
@@ -26,7 +30,7 @@ def randon_walk():
     timmy_the_turtle.setheading(random.choice(directions))
 
 
-timmy_the_turtle = Turtle()
+timmy_the_turtle = t.Turtle()
 timmy_the_turtle.shape("circle")
 timmy_the_turtle.color("blue")
 
@@ -38,7 +42,7 @@ elif current_exercise == 3:
     for i in range (100):
         randon_walk()
 
-screen = Screen()
+screen = t.Screen()
 screen.exitonclick()
 
 
