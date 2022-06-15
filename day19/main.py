@@ -1,6 +1,7 @@
 import turtle as t
 import random
 
+
 tutu = t.Turtle()
 screen = t.Screen()
 
