@@ -1,7 +1,7 @@
 import random
 import turtle as t
 from snake import Snake
-import time as t
+import time
 
 screen = t.Screen()
 screen.setup(width=600, height=600)
