@@ -1,35 +1,10 @@
-import pandas as pd 
+import pandas as pd
 
-data = pd.read_csv("weather_data.csv")
+FUR_COLOR_01 = 'Primary Fur Color'
 
-# print(data["temp"])
-# data_dict = data.to_dict()
-# print(data_dict)
+data = pd.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
 
-temp_list = data["temp"].to_list()
-# print(temp_list)
-
-# media = data["temp"].mean()
-# print(media)
-
-# mediana = data["temp"].median()
-#print(mediana)
-
-#print(data[data.day == "Monday"])
-
-#print(data[data.temp == data.temp.max()])
-
-monday = data[data.day == "Monday"]
-#print(monday.temp)
-monday_temp = int(monday.temp)*(9/5) + 32
-
-#print(monday_temp)
-
-data_dict = {
-    "student": ["Any", "jessy"],
-    "score": [48, 12]
-}
-
-data = pd.DataFrame(data_dict)
-print(data)
-data.to_csv("new_data.csv")
+print(data[FUR_COLOR_01].unique())
+fur_gray = (data['Primary Fur Color'] == 'Gray')
+print(data['Primary Fur Color'].value_counts())
+print(data['Primary Fur Color'].size)
