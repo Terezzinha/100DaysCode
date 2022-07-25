@@ -6,4 +6,6 @@ class Screenboad(Turtle):
 
     def __init__(self):
         self.title = "U.S States Games"
-        self.bgpic("blank_states_img.gif")
+        #self.bgpic("blank_states_img.gif")
+        self.hideturtle()
+        self.penup()
