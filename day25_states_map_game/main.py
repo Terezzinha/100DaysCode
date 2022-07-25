@@ -1,7 +1,10 @@
 import turtle as tu
 import pandas as pd
+import screenboard as sb
 
 FONT = ("Courier", 12, "normal")
+
+screenboard = sb.Screenboad()
 
 screen = tu.Screen()
 screen.title = "U.S States Games"
