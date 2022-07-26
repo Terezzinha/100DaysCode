@@ -1,7 +1,6 @@
 import turtle as tu
 import pandas as pd
 
-# todo record de correct in a list
 # todo keep track of the score
 
 FONT = ("Courier", 12, "normal")
