@@ -33,19 +33,3 @@ while count_answers < 50:
 
 with open("score.txt", mode="w") as score_file:
     score_file.write(str(count_answers))
-
-#
-#
-# game_is_on = True
-# while game_is_on:
-#
-#     if not (data[data.state == answer_state]):
-#         pos_x = int(data[data.state == answer_state].x)
-#         pos_y = int(data[data.state == answer_state].y)
-#         tu.penup()
-#         tu.goto(pos_x, pos_y)
-#
-#         tu.write(answer_state, align="left", font=FONT)
-#     else:
-#         game_is_on = False
-#screen.exitonclick()
