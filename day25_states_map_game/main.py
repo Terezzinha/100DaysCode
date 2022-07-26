@@ -48,4 +48,4 @@ with open("score.txt", mode="w") as score_file:
 #         tu.write(answer_state, align="left", font=FONT)
 #     else:
 #         game_is_on = False
-screen.exitonclick()
+#screen.exitonclick()
