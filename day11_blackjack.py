@@ -1,4 +1,5 @@
 import random
+## sincronization by git
 ##################### Hints #####################
 # Hint 2: Read this breakdown of program requirements:
 #   http://listmoz.com/view/6h34DJpvJBFVRlZfJvxF
