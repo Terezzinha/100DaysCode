@@ -1,7 +1,14 @@
-# TODO: abrir os arquivos de nomes
+PLACEHOLDER = "[name]"
 
-# TODO: cortar os nomes em uma lista
 
-# TODO: percorrer a lista e substuir o nome na carta
+with open("./Input/Names/invited_names.txt") as names_file:
+    names = names_file.readlines()
 
-# TODO: criar um novo arquivo com o nome da pessoa na pasta ReadyToSend
+with open("./Input/Letters/starting_letter.txt") as letter_file:
+    letter_contents = letter_file.read()
+    for name in names:
+        stripped_name = name.strip()
+        new_letter = letter_contents.replace(PLACEHOLDER, stripped_name)
+        with open(f"./Output/ReadyToSend/letter_for_{stripped_name}.txt", mode="w") as completed_letter:
+            completed_letter.write(new_letter)
+
